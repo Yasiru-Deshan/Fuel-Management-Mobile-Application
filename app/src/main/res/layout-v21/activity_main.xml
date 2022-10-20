@@ -63,6 +63,7 @@
                         android:text="Eligible Weekly Quota">
                     </TextView>
                     <Button
+                        android:id="@+id/eligiblebutton"
                         android:layout_below="@+id/eligible"
                         android:layout_width="150dp"
                         android:layout_height="100dp"
@@ -92,7 +93,116 @@
                 </RelativeLayout>
             </LinearLayout>
         </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
+            <TextView
+                android:id="@+id/history"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:text="History"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardElevation="7dp"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+
+                        >
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="20dp">
+                            <TextView
+                                android:id="@+id/used"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:text="Quota Used">
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/station"
+                                android:layout_below="@+id/used"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:text="Station">
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/date"
+                                android:layout_below="@+id/station"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:text="Date">
+                            </TextView>
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="20dp">
+                            <TextView
+                                android:id="@+id/usedAns"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:text="4L">
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/stationAns"
+                                android:layout_below="@+id/usedAns"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:text="Gampaha">
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/dateAns"
+                                android:layout_below="@+id/stationAns"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:text="6/10/2022">
+                            </TextView>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
