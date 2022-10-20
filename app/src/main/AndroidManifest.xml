@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EADApplication">
+        <activity android:name=".pumpDetails"></activity>
+        <activity android:name=".queue" />
+        <activity android:name=".FuelStation" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

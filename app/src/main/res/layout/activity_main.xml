@@ -63,6 +63,7 @@
                         android:text="Eligible Weekly Quota">
                     </TextView>
                     <Button
+                        android:id="@+id/eligiblebutton"
                         android:layout_below="@+id/eligible"
                         android:layout_width="150dp"
                         android:layout_height="100dp"
@@ -73,7 +74,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginStart="20dp">
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp">
                     <TextView
                         android:id="@+id/balance"
                         android:layout_width="wrap_content"
@@ -105,9 +107,10 @@
                 android:layout_centerInParent="true"
                 android:text="History"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textStyle="bold" />
         </RelativeLayout>
+
 
         <RelativeLayout
             android:layout_width="match_parent"
