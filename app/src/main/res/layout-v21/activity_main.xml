@@ -8,201 +8,70 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:paddingHorizontal="20dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fuelIcon"
+            android:layout_marginTop="50dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="100dp"
+            android:elevation="100dp">
 
-            <SearchView
-                style="@android:style/Widget.Material.SearchView"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_centerInParent="true"
-                android:visibility="visible" />
-        </RelativeLayout>
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/fuel2"
+   />
 
-        <RelativeLayout
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/fuelTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/fuelIcon"
+            android:text="FUEL MANAGER"
+            android:layout_centerHorizontal="true"
+            android:textSize="40dp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/signup"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_height="100dp"
+            android:layout_below="@id/fuelTitle"
+            android:text="Sign Up"
+            android:textSize="30dp"
+            app:backgroundTint="?attr/colorSecondary" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_centerInParent="true"
-                android:text="WP PH-2431"
-                android:textStyle="bold"
-                android:textSize="24dp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <TextView
             android:layout_marginTop="20dp"
-            >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                >
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/eligible"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="16dp"
-                        android:text="Eligible Weekly Quota">
-                    </TextView>
-                    <Button
-                        android:id="@+id/eligiblebutton"
-                        android:layout_below="@+id/eligible"
-                        android:layout_width="150dp"
-                        android:layout_height="100dp"
-                        android:text="20L"
-                        android:textSize="40dp"/>
-                </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginStart="20dp">
-                    <TextView
-                        android:id="@+id/balance"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="16dp"
-                        android:text="Balance">
-                    </TextView>
-
-                    <Button
-                        android:layout_width="150dp"
-                        android:layout_height="100dp"
-                        android:layout_below="@+id/balance"
-                        android:text="10L"
-                        android:textSize="40dp"
-                        app:backgroundTint="@android:color/holo_orange_light" />
-                </RelativeLayout>
-            </LinearLayout>
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
+            android:id="@+id/already"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
-
-            <TextView
-                android:id="@+id/history"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_centerInParent="true"
-                android:text="History"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
-
-
-        <RelativeLayout
+            android:layout_below="@id/signup"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:text="Already have an account?"
+/>
+        <Button
+            android:id="@+id/login"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
+            android:layout_below="@id/already"
+            android:textSize="30dp"
+            android:text="Login" />
 
-            >
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                app:cardElevation="7dp"
-                >
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-
-                        >
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="20dp">
-                            <TextView
-                                android:id="@+id/used"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="20sp"
-                                android:textStyle="bold"
-                                android:text="Quota Used">
-                            </TextView>
-
-                            <TextView
-                                android:id="@+id/station"
-                                android:layout_below="@+id/used"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="20sp"
-                                android:textStyle="bold"
-                                android:text="Station">
-                            </TextView>
-
-                            <TextView
-                                android:id="@+id/date"
-                                android:layout_below="@+id/station"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="20sp"
-                                android:textStyle="bold"
-                                android:text="Date">
-                            </TextView>
-                        </RelativeLayout>
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="20dp">
-                            <TextView
-                                android:id="@+id/usedAns"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="20sp"
-                                android:text="4L">
-                            </TextView>
-
-                            <TextView
-                                android:id="@+id/stationAns"
-                                android:layout_below="@+id/usedAns"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="20sp"
-                                android:text="Gampaha">
-                            </TextView>
-
-                            <TextView
-                                android:id="@+id/dateAns"
-                                android:layout_below="@+id/stationAns"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="20sp"
-                                android:text="6/10/2022">
-                            </TextView>
-                        </RelativeLayout>
-                    </LinearLayout>
-                </RelativeLayout>
-            </com.google.android.material.card.MaterialCardView>
-        </RelativeLayout>
-
+    </RelativeLayout>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
