@@ -61,6 +61,14 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/vehicleNumber"
                         android:layout_margin="8dp"
+                        android:hint="Enter Fuel Type"
+                        android:id="@+id/fuelType" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fuelType"
+                        android:layout_margin="8dp"
                         android:hint="Enter email"
                         android:id="@+id/emailEdit" />
 

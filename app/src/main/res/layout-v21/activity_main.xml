@@ -71,6 +71,14 @@
             android:textSize="30dp"
             android:text="Login" />
 
+        <Button
+            android:id="@+id/ownerButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/login"
+            android:text="I'm a station owner!"
+            app:backgroundTint="?android:attr/colorPressedHighlight" />
+
     </RelativeLayout>
     </LinearLayout>
 

@@ -1,5 +1,6 @@
 package com.example.eadapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button buttonOne = findViewById(R.id.ownerButton);
+        buttonOne.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent activity2Intent = new Intent(getApplicationContext(), MainAdmin.class);
+                startActivity(activity2Intent);
+            }
+        });
 
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -81,11 +91,14 @@ public class MainActivity extends AppCompatActivity {
 
                             LoginResult result = response.body();
 
-                            AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
+                                Intent activity2Intent = new Intent(getApplicationContext(), Home.class);
+                                startActivity(activity2Intent);
+
+                       /*    AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
                             builder1.setTitle(result.getName());
                             builder1.setMessage(result.getEmail());
 
-                            builder1.show();
+                            builder1.show();*/
 
                         } else if (response.code() == 404) {
                             Toast.makeText(MainActivity.this, "Wrong Credentials",
@@ -117,6 +130,8 @@ public class MainActivity extends AppCompatActivity {
         final EditText nameEdit = view.findViewById(R.id.nameEdit);
         final EditText emailEdit = view.findViewById(R.id.emailEdit);
         final EditText passwordEdit = view.findViewById(R.id.passwordEdit);
+        final EditText vehicleNumber = view.findViewById(R.id.vehicleNumber);
+        final EditText fuelType = view.findViewById(R.id.fuelType);
 
         signupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,6 +142,8 @@ public class MainActivity extends AppCompatActivity {
                 map.put("name", nameEdit.getText().toString());
                 map.put("email", emailEdit.getText().toString());
                 map.put("password", passwordEdit.getText().toString());
+                map.put("vehicleNumber", vehicleNumber.getText().toString());
+                map.put("fuelType", fuelType.getText().toString());
 
                 Call<Void> call = retrofitInterface.executeSignup(map);
 
@@ -139,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
                                     "Signed up successfully", Toast.LENGTH_LONG).show();
                         } else if (response.code() == 400) {
                             Toast.makeText(MainActivity.this,
-                                    "Already registered", Toast.LENGTH_LONG).show();
+                                    "This vehicle is already registered", Toast.LENGTH_LONG).show();
                         }
 
                     }
