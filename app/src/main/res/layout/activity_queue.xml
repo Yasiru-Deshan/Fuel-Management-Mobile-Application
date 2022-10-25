@@ -65,6 +65,7 @@
                         android:layout_below="@+id/stationLocation"
                         >
                         <Button
+                            android:id="@+id/available"
                             android:layout_width="150dp"
                             android:layout_height="50dp"
                             android:text="Available"
@@ -81,6 +82,7 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/nextDate"
                             android:layout_width="wrap_content"
                             android:textColor="@color/black"
                             android:textStyle="bold"
@@ -165,7 +167,7 @@
                         android:padding="20dp">
 
                         <TextView
-                            android:id="@+id/usedAns"
+                            android:id="@+id/vehiCount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="40"
@@ -173,10 +175,10 @@
                             android:textStyle="bold"></TextView>
 
                         <TextView
-                            android:id="@+id/stationAns"
+                            android:id="@+id/waitingTime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/usedAns"
+                            android:layout_below="@+id/vehiCount"
                             android:text="2 hrs"
                             android:textSize="30sp"
                             android:textStyle="bold"></TextView>
