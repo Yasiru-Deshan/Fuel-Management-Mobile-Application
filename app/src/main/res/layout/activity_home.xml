@@ -37,23 +37,13 @@
                 android:layout_marginTop="20dp">
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/vehiNu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="WP PH-2431"
                     android:textSize="36dp"
                     android:textStyle="bold" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dp">
-
-                <ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -96,12 +86,13 @@
 
                         <TextView
                             android:id="@+id/balance"
+                            android:text="Balance"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Balance"
                             android:textSize="16dp"></TextView>
 
                         <Button
+                            android:id="@+id/balanceButton"
                             android:layout_width="150dp"
                             android:layout_height="100dp"
                             android:layout_below="@+id/balance"
@@ -111,7 +102,66 @@
                     </RelativeLayout>
                 </LinearLayout>
             </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
 
+                <TextView
+                    android:id="@+id/stationList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:text="Stations List"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:cardElevation="7dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+
+                <TextView
+                    android:id="@+id/stationDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/black">
+                </TextView>
+            </RelativeLayout>
+        </LinearLayout>
+        </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -164,11 +214,11 @@
                                     android:id="@+id/used"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Quota Used"
+                                    android:text=""
                                     android:textSize="20sp"
                                     android:textStyle="bold"></TextView>
 
-                                <TextView
+                                <!--<TextView
                                     android:id="@+id/station"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -184,10 +234,10 @@
                                     android:layout_below="@+id/station"
                                     android:text="Date"
                                     android:textSize="20sp"
-                                    android:textStyle="bold"></TextView>
+                                    android:textStyle="bold"></TextView>-->
                             </RelativeLayout>
 
-                            <RelativeLayout
+                            <!--<RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
@@ -215,7 +265,7 @@
                                     android:layout_below="@+id/stationAns"
                                     android:text="6/10/2022"
                                     android:textSize="20sp"></TextView>
-                            </RelativeLayout>
+                            </RelativeLayout>-->
                         </LinearLayout>
                     </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
