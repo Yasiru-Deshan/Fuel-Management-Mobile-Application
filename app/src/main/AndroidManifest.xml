@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EADApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MainAdmin"></activity>
+        <activity android:name=".NewStation"></activity>
+        <activity android:name=".AdminHome" />
+        <activity android:name=".FuelArrival" />
+        <activity android:name=".MainAdmin" />
         <activity android:name=".Home" />
         <activity android:name=".Signup" />
         <activity android:name=".Login" />
