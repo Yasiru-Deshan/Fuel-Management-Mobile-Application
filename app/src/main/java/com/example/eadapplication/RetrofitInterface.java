@@ -7,6 +7,9 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface RetrofitInterface {
 
@@ -19,21 +22,36 @@ public interface RetrofitInterface {
     @GET("/api/station/find/")
     Call<List<Station>> getStations();
 
-    @GET("/api/vehicle/find/635255700aef66acd7af2b0a/history")
-    Call<List<Vehicle>> getVehicle();
+    @GET("/api/vehicle/find/{id}/history")
+    Call<List<Vehicle>> getVehicle(@Path("id") String id);
 
-    @GET("/api/vehicle/find/635255700aef66acd7af2b0a")
-    Call<Vehicle> getVehicleDetails();
+    @GET("/api/vehicle/find/{id}")
+    Call<Vehicle> getVehicleDetails(@Path("id") String id);
 
-    @GET("/api/station/find/635252122711e4bc41f32f66")
-    Call<Station> getStationDetails();
+    @GET("/api/station/find/{id}")
+    Call<Station> getStationDetails(@Path("id") String id);
 
-    @GET("/api/station/find/635252122711e4bc41f32f66/petrol")
-    Call<List<Station>> getPetrolQueue();
+    @GET("/api/station/find/{id}/petrol")
+    Call<List<Station>> getPetrolQueue(@Path("id") String id);
 
-    @GET("/api/station/find/635252122711e4bc41f32f66/diesel")
-    Call<List<Station>> getDieselQueue();
+    @GET("/api/station/find/{id}/diesel")
+    Call<List<Station>> getDieselQueue(@Path("id") String id);
 
+    @PUT("/api/station/{id}/joinqueue")
+    Call<Void> joinQueue(@Body HashMap<String, String> map ,@Path("id") String id);
 
+    @PUT("api/station/{id}/exitqueue")
+    Call<Void> exitQueue(@Body HashMap<String, String> map ,@Path("id") String id);
 
+    @GET("/api/vehicle/findname")
+    Call<Vehicle> getFuelBalance(@Query("name") String name);
+
+    @PUT("/api/vehicle/pump/{id}")
+    Call<Void> pumpVehicle(@Body HashMap<String, String> map ,@Path("id") String id);
+
+    @POST("/api/station/")
+    Call<Void> newStation (@Body HashMap<String, String> map);
+
+    @POST("/api/station/login")
+    Call<LoginResult> executeLoginStation(@Body HashMap<String, String> map);
 }

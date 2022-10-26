@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pumpDetails">
+    tools:context=".FuelArrival">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fuel Pump Details"
+                android:text="Fuel Arrival Details"
                 android:textSize="40dp"
                 android:textStyle="bold"
                 android:textColor="@color/purple_700"
@@ -38,43 +38,51 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Vehicle Number">
+                android:hint="Enter Fuel Type">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/vehicleNo"
+                    android:id="@+id/fuelT"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/mobile"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Enter Quantity">
 
-            <Button
-                android:id="@+id/check"
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:text="Check Balance"
-                android:textSize="20dp"
-                app:backgroundTint="@android:color/holo_orange_light" />
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/quantity"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/mobile"
+                android:id="@+id/arrival"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="Enter Quantity">
+                android:hint="Enter Arrival Time">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:id="@+id/quantity"/>
+                    android:inputType="datetime"
+                    android:id="@+id/arrivalTime"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
 
             <Button
+                android:layout_marginTop="30dp"
                 android:id="@+id/pumpDone"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
@@ -84,5 +92,6 @@
 
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

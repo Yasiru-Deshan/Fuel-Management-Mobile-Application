@@ -54,8 +54,8 @@ public class Home extends AppCompatActivity {
         retrofitInterface = retrofit.create(RetrofitInterface.class);
 
         Call<List<Station>> stationsList = retrofitInterface.getStations();
-        Call<List<Vehicle>> vehicleList = retrofitInterface.getVehicle();
-        Call<Vehicle> vehicleDetails = retrofitInterface.getVehicleDetails();
+        Call<List<Vehicle>> vehicleList = retrofitInterface.getVehicle("635255700aef66acd7af2b0a");
+        Call<Vehicle> vehicleDetails = retrofitInterface.getVehicleDetails("635255700aef66acd7af2b0a");
 
         vehicleDetails.enqueue(new Callback<Vehicle>() {
             @Override
