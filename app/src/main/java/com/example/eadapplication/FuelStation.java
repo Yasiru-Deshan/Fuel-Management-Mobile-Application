@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.time.Instant;
 import java.util.HashMap;
 import java.util.List;
 
@@ -79,6 +78,7 @@ public class FuelStation extends AppCompatActivity {
             }
         });
 
+        //get station details
         stationDetails.enqueue(new Callback<Station>() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
@@ -93,9 +93,9 @@ public class FuelStation extends AppCompatActivity {
                 stationId.setText(station.getStationCode()) ;
                 stationName.setText(station.getName());
                 stationLocation.setText(station.getLocation());
-                nextDate.setText((Instant.parse(station.getArrivalDate().toString()).toString()));
+                nextDate.setText(station.getArrivalDate().toString());
 
-                String dateStr = station.getArrivalDate().toString();
+               // String dateStr = station.getArrivalDate().toString();
                // SimpleDateFormat sdf = new SimpleDateFormat(“yyyy-MM-dd HH:mm:ss”);
                 // Date birthDate = sdf. parse(dateStr); //then user.02-Apr-2013
 
@@ -116,6 +116,7 @@ public class FuelStation extends AppCompatActivity {
             }
         });
 
+        //get petrol queue
         petrolQueue.enqueue(new Callback<List<Station>>() {
             @Override
             public void onResponse(Call<List<Station>> call, Response<List<Station>> response) {
@@ -137,6 +138,7 @@ public class FuelStation extends AppCompatActivity {
             }
         });
 
+        //get diesel queue
         dieselQueue.enqueue(new Callback<List<Station>>() {
             @Override
             public void onResponse(Call<List<Station>> call, Response<List<Station>> response) {
@@ -159,6 +161,7 @@ public class FuelStation extends AppCompatActivity {
         });
     }
 
+    //join to queue method
     private void joinToQueue() {
 
         HashMap<String, String> map = new HashMap<>();

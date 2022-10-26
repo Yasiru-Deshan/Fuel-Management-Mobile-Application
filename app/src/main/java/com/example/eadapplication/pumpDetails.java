@@ -63,6 +63,7 @@ public class pumpDetails extends AppCompatActivity {
 
     }
 
+    //get balance of a vehicle
 
     private void checkBalance() {
 
@@ -97,6 +98,7 @@ public class pumpDetails extends AppCompatActivity {
 
     }
 
+    //pump a vehicle
     private void pump() {
 
         HashMap<String, String> map = new HashMap<>();

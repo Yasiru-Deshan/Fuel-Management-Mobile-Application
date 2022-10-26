@@ -69,7 +69,7 @@ public class queue extends AppCompatActivity {
 
         Call<Station> stationDetails = retrofitInterface.getStationDetails("635252122711e4bc41f32f66");
         Call<List<Station>> petrolQueue = retrofitInterface.getPetrolQueue("635252122711e4bc41f32f66");
-       // Call<List<Station>> dieselQueue = retrofitInterface.getDieselQueue();
+        //Call<List<Station>> dieselQueue = retrofitInterface.getDieselQueue();
 
         findViewById(R.id.exit).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +85,7 @@ public class queue extends AppCompatActivity {
             }
         });
 
+        //get station details
         stationDetails.enqueue(new Callback<Station>() {
             @Override
             public void onResponse(Call<Station> call, Response<Station> response) {
@@ -114,6 +115,7 @@ public class queue extends AppCompatActivity {
             }
         });
 
+        //get petrol queue
         petrolQueue.enqueue(new Callback<List<Station>>() {
             @Override
             public void onResponse(Call<List<Station>> call, Response<List<Station>> response) {
@@ -135,7 +137,8 @@ public class queue extends AppCompatActivity {
             }
         });
 
-       /* dieselQueue.enqueue(new Callback<List<Station>>() {
+        //get diesel queue
+      /*  dieselQueue.enqueue(new Callback<List<Station>>() {
             @Override
             public void onResponse(Call<List<Station>> call, Response<List<Station>> response) {
                 if (!response.isSuccessful()) {
@@ -158,6 +161,7 @@ public class queue extends AppCompatActivity {
 
     }
 
+    //exit from the queue
     private void exitQueue() {
 
         HashMap<String, String> map = new HashMap<>();

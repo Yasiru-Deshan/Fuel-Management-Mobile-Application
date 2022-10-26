@@ -1,12 +1,14 @@
 package com.example.eadapplication;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -51,7 +53,7 @@ public class MainAdmin extends AppCompatActivity {
         });
     }
 
-
+    //adminlogin
     private void handleLoginDialog() {
 
         View view = getLayoutInflater().inflate(R.layout.activity_login, null);
@@ -91,6 +93,38 @@ public class MainAdmin extends AppCompatActivity {
                             builder1.setMessage(result.getEmail());
 
                             builder1.show();*/
+                            Call<Vehicle> user = retrofitInterface.getUserByEmail(result.getEmail());
+
+                            user.enqueue(new Callback<Vehicle>() {
+                                @RequiresApi(api = Build.VERSION_CODES.O)
+                                @Override
+                                public void onResponse(Call<Vehicle> call, Response<Vehicle> response) {
+                                    if (!response.isSuccessful()) {
+
+                                        return;
+                                    }
+
+                                    Vehicle vehicle = response.body();
+
+                                     String userId = vehicle.getId();
+
+
+
+                                   // String dateStr = station.getArrivalDate().toString();
+                                    // SimpleDateFormat sdf = new SimpleDateFormat(“yyyy-MM-dd HH:mm:ss”);
+                                    // Date birthDate = sdf. parse(dateStr); //then user.02-Apr-2013
+
+                                    //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy", Locale.ENGLISH);
+                                    //LocalDate fdate = LocalDate.parse(station.getArrivalDate().toString(), formatter);
+                                    //nextDate.setText(fdate);
+
+                                }
+
+                                @Override
+                                public void onFailure(Call<Vehicle> call, Throwable t) {
+
+                                }
+                            });
 
                         } else if (response.code() == 404) {
                             Toast.makeText(MainAdmin.this, "Wrong Credentials",
@@ -110,6 +144,8 @@ public class MainAdmin extends AppCompatActivity {
         });
 
     }
+
+    //adminsignup
     private void handleSignupDialog() {
 
         View view = getLayoutInflater().inflate(R.layout.activity_new_station, null);

@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //login
     private void handleLoginDialog() {
 
         View view = getLayoutInflater().inflate(R.layout.activity_login, null);
@@ -119,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //signup
     private void handleSignupDialog() {
 
         View view = getLayoutInflater().inflate(R.layout.activity_signup, null);
