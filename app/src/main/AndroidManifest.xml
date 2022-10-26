@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EADApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".NewStation"></activity>
+        <activity android:name=".StationsList"></activity>
+        <activity android:name=".NewStation" />
         <activity android:name=".AdminHome" />
         <activity android:name=".FuelArrival" />
         <activity android:name=".MainAdmin" />

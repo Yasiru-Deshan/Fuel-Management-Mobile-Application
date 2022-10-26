@@ -54,4 +54,15 @@ public interface RetrofitInterface {
 
     @POST("/api/station/login")
     Call<LoginResult> executeLoginStation(@Body HashMap<String, String> map);
+
+    @GET("/api/vehicle/finduser")
+    Call<Vehicle> getUserByEmail(@Query("email") String email);
+
+    @PUT("/api/station/{id}")
+    Call<Void> changeAvailability(@Body HashMap<String, Boolean> map ,@Path("id") String id);
+
+    @PUT("/api/station/arrival/{id}")
+    Call<Void> updateArrival(@Body HashMap<String, String> map ,@Path("id") String id);
+
+
 }

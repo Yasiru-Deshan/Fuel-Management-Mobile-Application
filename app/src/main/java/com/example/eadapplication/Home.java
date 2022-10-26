@@ -57,6 +57,7 @@ public class Home extends AppCompatActivity {
         Call<List<Vehicle>> vehicleList = retrofitInterface.getVehicle("635255700aef66acd7af2b0a");
         Call<Vehicle> vehicleDetails = retrofitInterface.getVehicleDetails("635255700aef66acd7af2b0a");
 
+        //Get Vehicle Fuel Balance and details
         vehicleDetails.enqueue(new Callback<Vehicle>() {
             @Override
             public void onResponse(Call<Vehicle> call, Response<Vehicle> response) {
@@ -79,6 +80,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        //get history
         vehicleList.enqueue(new Callback<List<Vehicle>>() {
             @Override
             public void onResponse(Call<List<Vehicle>> call, Response<List<Vehicle>> response) {
@@ -108,6 +110,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        //get station list
        stationsList.enqueue(new Callback<List<Station>>() {
             @Override
             public void onResponse(Call<List<Station>> call, Response<List<Station>> response) {

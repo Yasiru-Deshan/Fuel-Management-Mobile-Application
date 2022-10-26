@@ -21,6 +21,12 @@ public class Vehicle {
 
     private String station;
 
+    private String _id;
+
+    public String getId() {
+        return _id;
+    }
+
     public Number getQuantity() {
         return quantity;
     }
